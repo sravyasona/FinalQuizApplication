@@ -1,0 +1,102 @@
+package com.example.finalproject;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.example.finalproject.Model.Category;
+
+import static android.content.Intent.FLAG_ACTIVITY_NO_HISTORY;
+
+public class MainActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Select a category..");
+        setSupportActionBar(toolbar);
+
+    }
+
+
+    public void onCategorySelected(View v) {
+        int ID = v.getId();
+        Intent intent = new Intent(MainActivity.this, GameActivity.class);
+
+
+        switch (ID) {
+
+            case R.id.ANIMALS_BTN:
+                intent.putExtra("CATEGORY", Category.ANIMALS.name());
+                break;
+            case R.id.ANIMATON_BTN:
+                intent.putExtra("CATEGORY", Category.ANIMATON.name());
+                break;
+            case R.id.ART_BTN:
+                intent.putExtra("CATEGORY", Category.ART.name());
+                break;
+            case R.id.SPORTS_BTN:
+                intent.putExtra("CATEGORY", Category.SPORTS.name());
+                break;
+            case R.id.COMPUTER_BTN:
+                intent.putExtra("CATEGORY", Category.COMPUTER.name());
+                break;
+            case R.id.MATHS_BTN:
+                intent.putExtra("CATEGORY", Category.MATHS.name());
+                break;
+            case R.id.GENERAL_BTN:
+                intent.putExtra("CATEGORY", Category.GENERAL.name());
+                break;
+            case R.id.GAMES_BTN:
+                intent.putExtra("CATEGORY", Category.GAMES.name());
+                break;
+            case R.id.TELEVISION:
+                intent.putExtra("CATEGORY", Category.TELEVISION.name());
+                break;
+            case R.id.FILMS:
+                intent.putExtra("CATEGORY", Category.FILMS.name());
+                break;
+            case R.id.BOOKS_BTN:
+                intent.putExtra("CATEGORY", Category.BOOKS.name());
+                break;
+            case R.id.MUSIC_BTN:
+                intent.putExtra("CATEGORY", Category.MUSIC.name());
+                break;
+        }
+        intent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.logoutItem:
+                SharedPreferences preferences = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+                preferences.edit().remove("UserId").commit();
+                Intent intent2 = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent2);
+                finish();
+                break;
+        }
+        return true;
+    }
+}
