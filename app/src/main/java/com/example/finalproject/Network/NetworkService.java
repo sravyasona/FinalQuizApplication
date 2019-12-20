@@ -9,6 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkService {
     private static NetworkService mInstance;
+
+    // here is the base url
     private static final String BASE_URL = "https://quiz-api-service.herokuapp.com/";
     private Retrofit mRetrofit;
 
@@ -17,6 +19,7 @@ public class NetworkService {
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
+        // we are calling retrofit http client for android and java
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)

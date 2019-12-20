@@ -31,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+     // Once category selected it moves from the main activity to the game activity
+
     public void onCategorySelected(View v) {
         int ID = v.getId();
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
 
-
+         // Here we are giving a function to select a category
         switch (ID) {
 
             case R.id.ANIMALS_BTN:
@@ -85,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
+
+
+
+    // menu bar we had a logout button where user can logout
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

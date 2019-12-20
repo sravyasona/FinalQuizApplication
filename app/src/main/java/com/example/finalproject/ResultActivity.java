@@ -25,6 +25,8 @@ import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
 
+// Declared private function
+
     private int total;
     private int correct;
     private String userId;
@@ -45,6 +47,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         TextView  tvScore = findViewById(R.id.score);
         tvScore.setText(String.format("%d/%d", correct, total));
 
+        // menu button where it navigates to the start activity
+
         Button btnHome = findViewById(R.id.btn_home);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +59,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
             }
         });
+
+        // spinner will be displayed untill the result is displayed
         this.dialog = new ProgressDialog(ResultActivity.this);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setTitle("Loading");
@@ -62,6 +68,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         dialog.setIndeterminate(true);
         dialog.setCanceledOnTouchOutside(false);
 
+
+        // Here requesting the response from json api to load the result.
         dialog.show();
         NetworkService.getInstance()
                 .getJSONApi()
@@ -82,7 +90,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 });
     }
-
+  // menu button where it navigates to the start activity
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);

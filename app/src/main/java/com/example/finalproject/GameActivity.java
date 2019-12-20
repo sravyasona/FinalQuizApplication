@@ -49,6 +49,7 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+// calling a api for response to the load the data of the questions
 
         NetworkService.getInstance()
                     .getJSONApi()
@@ -62,7 +63,7 @@ public class GameActivity extends AppCompatActivity {
                         viewPager.setOffscreenPageLimit (questions.size());
                         progressBar.setVisibility(View.GONE);
                     }
-
+// We can get an error if we cannot get a response from Api service and it displays error retrieving the data
                     @Override
                     public void onFailure(@NotNull Call<ApiResponse> call, @NotNull Throwable t) {
                         Toast.makeText(GameActivity.this, "Error retrieving data", Toast.LENGTH_LONG).show();
@@ -76,6 +77,7 @@ public class GameActivity extends AppCompatActivity {
        MyViewPager myViewPager = findViewById(R.id.viewPager);
        myViewPager.setCurrentItem(myViewPager.getCurrentItem()+1,true);
 
+// it displays whether the answer is correct or wrong by giving a toast Message
 
        if( v.getTag() != null && v.getTag().toString().equals("correct")){
            Toast.makeText(this,"Correct!",Toast.LENGTH_SHORT).show();

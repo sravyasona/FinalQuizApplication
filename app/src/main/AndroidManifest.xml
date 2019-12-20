@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.finalproject">
 
+    // Here we are requesting the internet permission
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
