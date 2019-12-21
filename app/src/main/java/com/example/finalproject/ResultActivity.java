@@ -73,6 +73,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         dialog.show();
         NetworkService.getInstance()
                 .getJSONApi()
+            //executing the post request
                 .postResult(new Result(userId,categoryId,correct,total))
                 .enqueue(new Callback<Result>() {
                     @Override
