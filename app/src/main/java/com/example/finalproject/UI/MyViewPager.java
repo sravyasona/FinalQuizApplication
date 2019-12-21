@@ -39,17 +39,6 @@ public class MyViewPager extends ViewPager {
 
     }
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent event) {
-//
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//
-//        return false;
-//    }
 
     private class VerticalPageTransformer implements PageTransformer {
         static final float MIN_SCALE=0.65f;
