@@ -1,6 +1,7 @@
 # FinalQuizApplication
 
-INTRODUCTION
+INTRODUCTION:
+
 Mobile Computing is very popular and almost present everywhere. Nowadays,
 smartphones are the tools in our society to communicate with other people,
 Entertainment and many more. Smartphone development became important
