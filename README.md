@@ -33,3 +33,8 @@ activity. The resulting activity's main functionality of the code is too display
 the result of the questions. There is a small button function code is added if
 a user is interested in doing the quiz again. He can choose to click the menu
 button where it redirects to the main page of the category list.
+
+
+Reference:
+
+1. https://github.com/vikesh8860/QuizBook
