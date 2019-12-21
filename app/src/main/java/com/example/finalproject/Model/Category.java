@@ -1,20 +1,20 @@
 package com.example.finalproject.Model;
 
 
-public enum Category {
-    ANIMATON(31),
-    GAMES(15),
-    ART(25),
-    MATHS(19),
-    ANIMALS(27),
-    COMPUTER(18),
-    FILMS(11),
+public enum Category{
+    MUSIC(12),
     BOOKS(10),
-    GENERAL(9),
-    POLITICS(24),
-    SPORTS(21),
+    FILMS(11),
     TELEVISION(14),
-    MUSIC(12);
+    GAMES(15),
+    MATHEMATICS(19),
+    COMPUTER(18),
+    GENERAL(9),
+    SPORTS(21),
+    ART(25),
+    ANIMALS(27),
+    POLITICS(24),
+    ANIME(31);
 
     public int id;
 

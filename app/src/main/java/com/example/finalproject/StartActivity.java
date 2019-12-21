@@ -25,9 +25,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
 
     Button login;
-
-    // user information is private mode
-    // It intents to the start activity to the main activity
     @Override
     protected void onStart() {
         SharedPreferences settings = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
@@ -43,7 +40,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         super.onStart();
     }
 
-    // login button to enter into the main activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +67,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         NetworkService.getInstance()
                 .getJSONApi()
                 .getUserByName( ((EditText)findViewById(R.id.username)).getText().toString())
-            
-            //Our APIService instance will return a Call instance which has a method called enqueue(Callback<T> callback). [16]
                 .enqueue(new Callback<User>() {
-
-                    // after giving user id it store in the data storage.
                     @Override
                     public void onResponse(@NotNull Call<User> call, @NotNull Response<User> response) {
                         SharedPreferences settings = getSharedPreferences("UserInfo", 0);

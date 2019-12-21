@@ -31,55 +31,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-     // Once category selected it moves from the main activity to the game activity
-
     public void onCategorySelected(View v) {
         int ID = v.getId();
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
 
-         // Here we are giving a function to select a category
+
         switch (ID) {
-
-            case R.id.POLITICS_BTN:
-                intent.putExtra("CATEGORY", Category.POLITICS.name());
-                break;
-
-            case R.id.ANIMALS_BTN:
-                intent.putExtra("CATEGORY", Category.ANIMALS.name());
-                break;
-            case R.id.ANIMATON_BTN:
-                intent.putExtra("CATEGORY", Category.ANIMATON.name());
-                break;
-            case R.id.ART_BTN:
-                intent.putExtra("CATEGORY", Category.ART.name());
-                break;
-            case R.id.SPORTS_BTN:
-                intent.putExtra("CATEGORY", Category.SPORTS.name());
-                break;
             case R.id.COMPUTER_BTN:
                 intent.putExtra("CATEGORY", Category.COMPUTER.name());
-                break;
-            case R.id.MATHS_BTN:
-                intent.putExtra("CATEGORY", Category.MATHS.name());
-                break;
-            case R.id.GENERAL_BTN:
-                intent.putExtra("CATEGORY", Category.GENERAL.name());
-                break;
-            case R.id.GAMES_BTN:
-                intent.putExtra("CATEGORY", Category.GAMES.name());
-                break;
-            case R.id.TELEVISION:
-                intent.putExtra("CATEGORY", Category.TELEVISION.name());
-                break;
-            case R.id.FILMS:
-                intent.putExtra("CATEGORY", Category.FILMS.name());
-                break;
-            case R.id.BOOKS_BTN:
-                intent.putExtra("CATEGORY", Category.BOOKS.name());
                 break;
             case R.id.MUSIC_BTN:
                 intent.putExtra("CATEGORY", Category.MUSIC.name());
                 break;
+            case R.id.FILMS:
+                intent.putExtra("CATEGORY", Category.FILMS.name());
+                break;
+            case R.id.TELEVISION:
+                intent.putExtra("CATEGORY", Category.TELEVISION.name());
+                break;
+            case R.id.GAMES_BTN:
+                intent.putExtra("CATEGORY", Category.GAMES.name());
+                break;
+            case R.id.BOOKS_BTN:
+                intent.putExtra("CATEGORY", Category.BOOKS.name());
+                break;
+            case R.id.GENERAL_BTN:
+                intent.putExtra("CATEGORY", Category.GENERAL.name());
+                break;
+            case R.id.MATHS_BTN:
+                intent.putExtra("CATEGORY", Category.MATHEMATICS.name());
+                break;
+            case R.id.SPORTS_BTN:
+                intent.putExtra("CATEGORY", Category.SPORTS.name());
+                break;
+            case R.id.ART_BTN:
+                intent.putExtra("CATEGORY", Category.ART.name());
+                break;
+            case R.id.ANIMALS_BTN:
+                intent.putExtra("CATEGORY", Category.ANIMALS.name());
+                break;
+            case R.id.POLITICS_BTN:
+                intent.putExtra("CATEGORY", Category.POLITICS.name());
+                break;
+            case R.id.ANIMATON_BTN:
+                intent.putExtra("CATEGORY", Category.ANIME.name());
+                break;
+
         }
         intent.setFlags(FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
@@ -91,14 +88,13 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
-
-
-
-    // menu bar we had a logout button where user can logout
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-
+            case R.id.ldrboardItem:
+                Intent intent1 = new Intent(MainActivity.this, LeaderboardActivity.class);
+                startActivity(intent1);
+                break;
             case R.id.logoutItem:
                 SharedPreferences preferences = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
                 preferences.edit().remove("UserId").commit();

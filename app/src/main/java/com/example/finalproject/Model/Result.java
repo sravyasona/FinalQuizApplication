@@ -1,7 +1,7 @@
 package com.example.finalproject.Model;
 
 public class Result {
-    private String  userId;
+    private String userId;
     private int     categoryId;
     private int     correct;
     private int     total;

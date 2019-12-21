@@ -40,6 +40,7 @@ public class MyViewPager extends ViewPager {
     }
 
 
+
     private class VerticalPageTransformer implements PageTransformer {
         static final float MIN_SCALE=0.65f;
         @Override

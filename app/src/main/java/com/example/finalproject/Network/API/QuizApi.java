@@ -20,7 +20,7 @@ public interface QuizApi {
     Call<Leader []> getHistory(@Path("userId") String userId);
 
     @GET("leaderboard")
-    Call<Leader[]> getLeaders();
+    Call<Leader []> getLeaders();
 
     @POST("result")
     Call<Result> postResult(@Body Result result);

@@ -25,7 +25,7 @@ public class QuestionFragment extends Fragment implements View.OnClickListener {
     private TextView tvQuestion;
     private ViewGroup answer_btns;
 
-    public QuestionFragment(){
+    public  QuestionFragment(){
 
     }
 
