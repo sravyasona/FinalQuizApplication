@@ -1,5 +1,18 @@
 # FinalQuizApplication
 
+INTRODUCTION
+Mobile Computing is very popular and almost present everywhere. Nowadays,
+smartphones are the tools in our society to communicate with other people,
+Entertainment and many more. Smartphone development became important
+than before. Android is one of the best leading operating systems for smart-
+phones. It is also an open-source system platform. Many of the smartphones
+adopt this platform to work on more development projects. We proposed a quiz
+application design based on Android. The main goal of the paper is for students
+participating in learning the knowledge of dierent topics by attempting some
+quiz questions related to their interest area. This app will help the students for 
+the general knowledge foundation by using mobile computing.
+
+
 
 Application has many of the main functions. The application has the login page,
 where an application starts the activity with the login page. After entering the
