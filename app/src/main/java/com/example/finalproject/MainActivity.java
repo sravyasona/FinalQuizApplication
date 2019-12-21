@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
          // Here we are giving a function to select a category
         switch (ID) {
 
+            case R.id.POLITICS_BTN:
+                intent.putExtra("CATEGORY", Category.POLITICS.name());
+                break;
+
             case R.id.ANIMALS_BTN:
                 intent.putExtra("CATEGORY", Category.ANIMALS.name());
                 break;

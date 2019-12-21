@@ -60,7 +60,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        // spinner will be displayed untill the result is displayed
+        // spinner will be displayed until the result is displayed
         this.dialog = new ProgressDialog(ResultActivity.this);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setTitle("Loading");
@@ -73,6 +73,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         dialog.show();
         NetworkService.getInstance()
                 .getJSONApi()
+
+                // executing the post request
+
                 .postResult(new Result(userId,categoryId,correct,total))
                 .enqueue(new Callback<Result>() {
                     @Override
