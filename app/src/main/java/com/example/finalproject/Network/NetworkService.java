@@ -5,7 +5,6 @@ import com.example.finalproject.Network.API.QuizApi;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
-
 // we are calling retrofit http client for android and java
 //include the Retrofit library and also Google's Gson library to convert JSON to java objects
 import retrofit2.Retrofit;
@@ -15,7 +14,6 @@ public class NetworkService {
     private static NetworkService mInstance;
 
     // here is the base url
-
     //Retrofit needs a base URL to build its instance, so we will pass it a URL when calling RetrofitClient.getClient(String baseUrl)
     private static final String BASE_URL = "https://quiz-api-service.herokuapp.com/";
     private Retrofit mRetrofit;
@@ -25,7 +23,7 @@ public class NetworkService {
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-
+        
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)

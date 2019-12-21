@@ -71,8 +71,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         NetworkService.getInstance()
                 .getJSONApi()
                 .getUserByName( ((EditText)findViewById(R.id.username)).getText().toString())
-
-        //Our APIService instance will return a Call instance which has a method called enqueue(Callback<T> callback). [16]
+            
+            //Our APIService instance will return a Call instance which has a method called enqueue(Callback<T> callback). [16]
                 .enqueue(new Callback<User>() {
 
                     // after giving user id it store in the data storage.
