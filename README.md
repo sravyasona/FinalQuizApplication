@@ -3,7 +3,7 @@
 
 Application has many of the main functions. The application has the login page,
 where an application starts the activity with the login page. After entering the
-login details of the user, then it intents to the other activity. The rst intent
+login details of the user, then it intents to the other activity. The first intent
 activity is the main activity. It is the main activity that has a categorical view of
 the list of interest topics. After selecting the interest topics, mobile application
 checks with the internet connection. If there is no internet connection then the
