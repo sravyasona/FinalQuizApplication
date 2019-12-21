@@ -4,9 +4,6 @@ import com.example.finalproject.Network.API.QuizApi;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-
-// we are calling retrofit http client for android and java
-//include the Retrofit library and also Google's Gson library to convert JSON to java objects
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
